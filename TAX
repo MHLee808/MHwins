@@ -1,0 +1,7 @@
+#  $${\ddot{x}(t)}= -\omega^2\frac{\delta(F_{0}/k)}{\sqrt{(1-\gamma^2)^2+(2\zeta\gamma)^2}}\cos(\omega t-\phi)$$ 
+
+#  $$x(t)= \frac{\delta(F_{0}/k)}{\sqrt{(1-\gamma^2)^2+(2\zeta\gamma)^2}}\cos(\omega t-\phi)$$ 
+
+# $$[m]{\ddot{x}(t)}+ [c]\dot{x}(t)+[k]{x(t)} = F(t)$$ 
+
+# $$[m]{\ddot{x}(t)}+ [c]\dot{x}(t)+[k]{x(t)} = F(t)$$ 

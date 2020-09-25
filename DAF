@@ -1,11 +1,13 @@
+# https://matplotlib.org/1.3.1/users/usetex.html
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 
 plt.rcParams['text.usetex']=True
 plt.rcParams['text.latex.unicode']=True
 from numpy import arange, cos, pi
-from matplotlib.pyplot import (figure, axes, plot, xlabel, ylabel, title,
-     grid, savefig, show)
+from matplotlib.pyplot import (figure, axes, plot, xlabel, ylabel, title, grid, savefig, show)
 
 f0 = 100
 k  = 200
@@ -15,26 +17,30 @@ r = np.linspace(0,10,1000)
 
 
 font2 = {'family': 'Times New Roman',
-      'color':  'blue',
+      'color':  'black',
       'weight': 'bold',
       'size': 18,
       'alpha': 2}
 
-plt.figure(figsize=(10,12))
+font3 = {'family': 'Times New Roman',
+      'color':  'black',
+      'weight': 'bold',
+      'size': 14,
+      'alpha': 2}
+
+plt.figure(figsize=(15,12))
 plt.subplot(221)
 for i in zetta:
     DAF = 1/np.sqrt((1-r**2)**2+(2*i*r)**2)
     plt.plot(r,DAF)
     
 plt.grid()
-#plt.xlabel(r'Freq Ratio ($\frac{\omega}{\omega_{n}}$)')
-plt.xlabel(r'\textit{Freq Ratio }' r"($\displaystyle\frac{\omega}{\omega_{n}}$)", fontsize=16)
+#plt.xlabel(r'\textit{Freq Ratio }' r"($\displaystyle\frac{\omega}{\omega_{n}}$)", fontsize=16)
+plt.xlabel(r'\textit{Freq Ratio }' r'$\displaystyle{({\gamma}=\frac{\omega}{\omega_{n}})}$' , fontsize=16)
 plt.ylabel(r'\textit{Disp. Amplitude}', fontsize=16)
-#plt.title('DAF(Dynamic Amplication Factor)')
 plt.title(r'\textit{DAF(Dynamic Amplication Factor)}', fontsize=16)
 plt.xlim(0,6)
 plt.ylim(0,3)
-plt.text(1.0, 0.35, 'np.random.randn()', fontdict=font2)
 # plt.show() 살려두면 그래프가 나란히 표현되지 않음
 
 plt.subplot(222)
@@ -43,18 +49,13 @@ for i in zetta:
     plt.plot(r,DAF1)
     
 plt.grid()
-#plt.xlabel(r'Freq Ratio ($\frac{\omega}{\omega_{n}}$)')
-#plt.xlabel(r'Freq Ratio ($\frac{\omega}{\omega_{n}}$)')
-#plt.xlabel(r'\textit{Freq Ratio }' r"$\displaystyle\sum_{n=1}^\infty\frac{-e^{i\pi}}{2^n}$!", fontsize=16)
-plt.xlabel(r'\textit{Freq Ratio }' r"($\displaystyle\frac{\omega}{\omega_{n}}$)", fontsize=16)
+plt.xlabel(r'\textit{Freq Ratio }' r'$\displaystyle{({\gamma}=\frac{\omega}{\omega_{n}})}$' , fontsize=16)
 plt.ylabel(r'\textit{Acc. Amplitude}', fontsize=16)
-
-
-#plt.title('DAF(Dynamic Amplication Factor)')
-plt.title(r'\textit{DAF(Dynamic Amplication Factor)}', fontsize=16)
+plt.title(r'\textit{ADAF(ACC. Dynamic Amplication Factor)}', fontsize=16)
 plt.xlim(0,6)
 plt.ylim(-3,0)
 
-plt.text(-1.0, 0.35, r"\TeX\ is Number " , fontdict=font2)
-# 
+#plt.text(-1.0, 0.35, r"\TeX\ is Number " , fontdict=font2)
+plt.text(-5.0, -2.65, r'\textit{DAF=}'r'$\displaystyle\frac{k/F0}{\sqrt{(1-\gamma^2)^2+(2\zeta\gamma)^2}}$' , fontdict=font3)
+plt.text(1.3, -2.65, r'\textit{ADAF=}' r'$\displaystyle-\omega^2$' r'$\displaystyle\frac{k/F0}{\sqrt{(1-\gamma^2)^2+(2\zeta\gamma)^2}}$'  , fontdict=font3)
 # plt.show() 살려두면 그래프가 나란히 표현되지 않음
